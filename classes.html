@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Classes | ES6 Features by Example</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>ES6 Features by Example</h1>
+        <h2>Classes</h2>
+      </div><!-- /page-header -->
+
+      <p>
+        <a class="btn btn-default" href="index.html">Home</a>
+      </p>
+
+      <p>
+        ES6 classes are a simple sugar over the prototype-based OO pattern. Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability. Classes support prototype-based inheritance, super calls, instance &amp; static methods, and constructors.
+      </p>
+
+      <p class="alert alert-info">Open your browser's console to view the output of this code.</p>
+
+      <pre><code>var alice;
+var bob;
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  printName() {
+    return this.name;
+  }
+
+  printAge() {
+    return this.age;
+  }
+}
+
+class Child extends Person {
+  constructor(name, age) {
+    super(name, age);
+  }
+
+  printName() {
+    return super.printName().toUpperCase();
+  }
+}
+
+alice = new Person('Alice', 27);
+console.log(alice.printName());
+console.log(alice.printAge());
+
+bob = new Child('Bob', 7);
+console.log(bob.printName());
+</code></pre>
+    </div><!-- /container -->
+
+    <script src="es5/classes.js"></script>
+  </body>
+</html>

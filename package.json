@@ -1,0 +1,15 @@
+{
+  "name": "es6-features",
+  "version": "1.0.0",
+  "description": "Collection of ES6 featuers by example. Runnable in the browser using scripts transpiled with Babel.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Travis Horn <horn.travis@gmail.com> (http://travishorn.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0"
+  }
+}

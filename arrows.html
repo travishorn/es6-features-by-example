@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Arrows | ES6 Features by Example</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>ES6 Features by Example</h1>
+        <h2>Arrows</h2>
+      </div><!-- /page-header -->
+
+      <p>
+        <a class="btn btn-default" href="index.html">Home</a>
+      </p>
+
+      <p>
+        Arrows are a function shorthand using the <code>=></code> syntax. They are syntactically similar to the related feature in C#, Java 8, and CoffeeScript. They support both expression and statement bodies. Unlike functions, arrows share the same lexical <code>this</code> as their surrounding code.
+      </p>
+
+      <p class="alert alert-info">Open your browser's console to view the output of this code.</p>
+
+      <pre><code>var evens = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+var odds = evens.map(v => v + 1);
+var nums = evens.map((v, i) => v + i);
+var pairs = evens.map(v => ({even: v, odd: v + 1}));
+var fives = [];
+var alice;
+
+nums.forEach(v => {
+  if (v % 5 === 0) {
+    fives.push(v);
+  }
+});
+
+alice = {
+  _name: 'Alice',
+  _friends: ['Bob', 'Carol', 'Dan'],
+  printFriends() {
+    this._friends.forEach(f =>
+      console.log(this._name + ' knows ' + f));
+  }
+};
+
+console.log('odds: ' + odds);
+console.log('nums: ' + nums);
+console.log('pairs: ' + JSON.stringify(pairs));
+console.log('fives: ' + fives);
+alice.printFriends();
+</code></pre>
+    </div><!-- /container -->
+
+    <script src="es5/arrows.js"></script>
+  </body>
+</html>
