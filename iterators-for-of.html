@@ -21,12 +21,32 @@
       </p>
 
       <p>
-
+        Iterator objects enable custom iteration like CLR IEnumerable or Java Iterable. Generalize <code>for..in</code> to custom iterator-based iteration with <code>for..of</code>. Don’t require realizing an array, enabling lazy design patterns like LINQ.
       </p>
 
       <p class="alert alert-info">Open your browser's console to view the output of this code.</p>
 
-      <pre><code></code></pre>
+      <pre><code>let fibonacci = {
+  [Symbol.iterator]() {
+    let pre = 0;
+    let cur = 1;
+
+    return {
+      next() {
+        [pre, cur] = [cur, pre + cur];
+        return { done: false, value: cur };
+      }
+    };
+  }
+};
+
+for (let n of fibonacci) {
+  if (n > 1000) {
+    break;
+  }
+  console.log(n);
+}
+</code></pre>
     </div><!-- /container -->
 
     <script src="es5/iterators-for-of.js"></script>

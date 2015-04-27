@@ -21,12 +21,36 @@
       </p>
 
       <p>
-
+        Template strings provide syntactic sugar for constructing strings. This is similar to string interpolation features in Perl, Python and more. Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.
       </p>
+
+      <p>Encapsulate template strings in backticks (<code>`</code>).</p>
 
       <p class="alert alert-info">Open your browser's console to view the output of this code.</p>
 
-      <pre><code></code></pre>
+      <pre><code>var name = 'Bob';
+var time = 'today';
+
+function tag(literals, ...values) {
+  // The first parameter is an array of all literals in the template.
+  console.log(literals[0]);
+  console.log(literals[1]);
+  console.log(literals[2]);
+
+  // The second is an array of all values.
+  console.log(values[0]);
+  console.log(values[1]);
+
+  return 'Tags can also return an object.';
+}
+
+console.log(`Multi-line strings are allowed
+in template strings.`);
+
+console.log(`Hello ${name}. How are you ${time}?`);
+
+console.log(tag`Hello ${name}. How are you ${time}?`);
+</code></pre>
     </div><!-- /container -->
 
     <script src="es5/template-strings.js"></script>

@@ -9,12 +9,6 @@ The descriptions and code examples on this site are taken from an MIT-licensed [
 ## To Do
 
 - Add description, example, and code for
-  - Enhanced Object Literals
-  - Template Strings
-  - Destructuring
-  - Default, Rest, & Spread
-  - Let & Const
-  - Iterators & For..Of
   - Generators
   - Unicode
   - Modules

@@ -21,12 +21,43 @@
       </p>
 
       <p>
-
+        Object literals are extended to support setting the prototype at construction, shorthand for foo: foo assignments, defining methods, making super calls, and computing property names with expressions. Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.
       </p>
 
       <p class="alert alert-info">Open your browser's console to view the output of this code.</p>
 
-      <pre><code></code></pre>
+      <pre><code>var alice;
+
+var Person = {
+  greet() {
+    return 'Hello.';
+  }
+};
+
+function greet() {
+  return 'Greetings.';
+}
+
+alice = {
+    // __proto__
+    __proto__: Person,
+
+    // Shorthand for "greet: greet"
+    greet,
+
+    // Methods & super calls
+    superGreet() {
+      return super.greet();
+    },
+
+    // Computed (dynamic) property names
+    [ 'prop_' + (() => 42)() ]: 42
+};
+
+console.log(alice.greet());
+console.log(alice.superGreet());
+console.log(alice.prop_42);
+</code></pre>
     </div><!-- /container -->
 
     <script src="es5/enhanced-object-literals.js"></script>

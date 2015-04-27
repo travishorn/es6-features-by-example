@@ -21,12 +21,29 @@
       </p>
 
       <p>
-
+        Destructuring allows binding using pattern matching, with support for matching arrays and objects. Destructuring is fail-soft, similar to standard object lookup foo["bar"], producing undefined values when not found.
       </p>
 
       <p class="alert alert-info">Open your browser's console to view the output of this code.</p>
 
-      <pre><code></code></pre>
+      <pre><code>var a;
+var b;
+var c;
+var d;
+
+// List matching
+[a, , b] = [1, 2, 3];
+
+// Function assignment
+function nums() {
+  return [1, 2];
+}
+
+[c, d] = nums();
+
+console.log(a + ' ' + b);
+console.log(c + ' ' + d);
+</code></pre>
     </div><!-- /container -->
 
     <script src="es5/destructuring.js"></script>
