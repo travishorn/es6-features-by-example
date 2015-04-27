@@ -21,12 +21,26 @@
       </p>
 
       <p>
-
+        Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp <code>u</code> mode to handle code points, as well as new APIs to process strings at the 21bit code points level. These additions support building global apps in JavaScript.
       </p>
 
       <p class="alert alert-info">Open your browser's console to view the output of this code.</p>
 
-      <pre><code></code></pre>
+      <pre><code>// New form
+console.log('\u{20BB7}');
+console.log('\uD842\uDFB7');
+
+// Same as ES5.1
+console.log('Unicode length: ' + '𠮷'.length);
+
+// New RegExp behaviour, opt-in ‘u’
+console.log('u RegExp length: ' + '𠮷'.match(/./u)[0].length);
+
+// for..of iterates code points
+for (let c of '𠮷') {
+  console.log(c);
+}
+</code></pre>
     </div><!-- /container -->
 
     <script src="es5/unicode.js"></script>

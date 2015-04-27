@@ -9,8 +9,6 @@ The descriptions and code examples on this site are taken from an MIT-licensed [
 ## To Do
 
 - Add description, example, and code for
-  - Generators
-  - Unicode
   - Modules
   - Module Loaders
   - Map, Set, Weakmap, & Weakset

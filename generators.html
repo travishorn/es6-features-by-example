@@ -21,14 +21,39 @@
       </p>
 
       <p>
-
+        Generators simplify iterator-authoring using <code>function*</code> and <code>yield</code>. A function declared as <code>function*</code> returns a <code>Generator</code> instance. Generators are subtypes of iterators which include additional <code>next</code> and <code>throw</code>. These enable values to flow back into the generator, so <code>yield</code> is an expression form which returns a value (or throws).
       </p>
+
+      <p>Note: Can also be used to enable <code>await</code>-like async programming, see also ES7 <code>await</code> proposal.</p>
 
       <p class="alert alert-info">Open your browser's console to view the output of this code.</p>
 
-      <pre><code></code></pre>
+      <pre><code>var fibonacci = {
+  [Symbol.iterator]: function*fib() {
+    var pre = 0;
+    var cur = 1;
+    var temp;
+
+    for (;;) {
+      temp = pre;
+      pre = cur;
+      cur += temp;
+      yield cur;
+    }
+  }
+};
+
+for (let n of fibonacci) {
+  if (n > 1000) {
+    break;
+  }
+
+  console.log(n);
+}
+</code></pre>
     </div><!-- /container -->
 
+    <script src="es5/browser-polyfill.js"></script>
     <script src="es5/generators.js"></script>
   </body>
 </html>
